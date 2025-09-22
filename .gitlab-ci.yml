@@ -6,3 +6,4 @@ build_car:
     - cd build
     - touch car.txt
     - echo "Chassis" > car.txt
+    - cat car.txt
