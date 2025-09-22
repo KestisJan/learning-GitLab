@@ -7,3 +7,9 @@ build_car:
     - touch car.txt
     - echo "Chassis" > car.txt
     - cat car.txt
+
+test_car:
+  image: alpine
+  script:
+    - test -f build/car.txt
+    - grep "Chassis" car.txt
