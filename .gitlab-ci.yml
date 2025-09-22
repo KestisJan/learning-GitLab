@@ -1,24 +1,33 @@
+# Simple GitLab CI pipeline:
+# Stage 1 builds an artifact (car.txt),
+# Stage 2 tests that the artifact exists and contains "Chassis".
+
 stages:
   - build
   - test
 
+# -----------------------
+# Build job: creates a dummy artifact
+# -----------------------
 build_car:
-  image: alpine
-  stage: build
-  script:
+  image: alpine               # Docker image used for the job
+  stage: build                # Assign job to 'build' stage
+  script:                     # Commands executed inside the container
     - echo "Building the car"
     - mkdir build
     - cd build
-    - touch car.txt
     - echo "Chassis" > car.txt
     - cat car.txt
-  artifacts:
+  artifacts:                  # Files to save and pass to next stages
     paths: 
       - build/
 
+# -----------------------
+# Test job: verifies the artifact
+# -----------------------
 test_car:
-  image: alpine
-  stage: test
-  script:
-    - test -f build/car.txt
-    - grep "Chassis" build/car.txt
+  image: alpine               # Docker image for testing
+  stage: test                 # Assign job to 'test' stage
+  script:                     # Commands executed inside the container
+    - test -f build/car.txt         # Check if the file exists
+    - grep "Chassis" build/car.txt  # Check file content
