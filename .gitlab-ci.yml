@@ -18,4 +18,4 @@ test_car:
   stage: test
   script:
     - test -f build/car.txt
-    - grep "Chassis" build/car.txt
+    - grep "Chassis" car.txt
