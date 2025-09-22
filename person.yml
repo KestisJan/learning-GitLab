@@ -1,0 +1,12 @@
+person:
+  first_name: Jamie
+  age: 22
+  is_married: false
+  hobbies: 
+    - Netflix
+    - Mountain biking
+  friends:
+    - first_name: Jane
+      age: 21
+    - first_name: Priya
+      age: 23

@@ -14,7 +14,6 @@ build_car:
   stage: build                # Assign job to 'build' stage
   script:                     # Commands executed inside the container
     - echo "Building the car"
-    - sleep 600
     - mkdir build
     - cd build
     - echo "Chassis" > car.txt
