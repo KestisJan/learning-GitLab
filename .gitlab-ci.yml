@@ -1,5 +1,10 @@
+stages:
+  - build
+  - test
+
 build_car:
   image: alpine
+  stage: build
   script:
     - echo "Building the car"
     - mkdir build
@@ -10,6 +15,7 @@ build_car:
 
 test_car:
   image: alpine
+  stage: test
   script:
     - test -f build/car.txt
-    - grep "Chassis" car.txt
+    - grep "Chassis" build/car.txt
