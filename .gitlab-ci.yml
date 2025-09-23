@@ -16,9 +16,9 @@ build_car:
     - echo "Building the car"
     - mkdir build
     - cd build
-    - echo "Chassis" > car.txt
-    - echo "engine" > car.txt
-    - echo "wheels" > car.txt
+    - echo "Chassis" >> car.txt
+    - echo "engine" >> car.txt
+    - echo "wheels" >> car.txt
     - cat car.txt
   artifacts:                  # Files to save and pass to next stages
     paths: 
